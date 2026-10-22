@@ -23,8 +23,7 @@ module axis_fifo (
     assign s_tready = (count != 3'd4);   // not full
     assign m_tvalid = (count != 3'd0);   // not empty
     assign m_tdata  = mem[rd_ptr][7:0];
-    assign m_tlast  = mem[rd_ptr][8];
-
+       assign m_tlast  = mem[rd_ptr][8];
     wire push = s_tvalid && s_tready;
     wire pop  = m_tvalid && m_tready;
 
